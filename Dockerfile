@@ -16,6 +16,7 @@ RUN apk update && apk upgrade && \
     openssh-client \
     git \
     curl \
+    tar \
     jq
 
 # Docker client
