@@ -17,6 +17,7 @@ RUN apk update && apk upgrade && \
     git \
     curl \
     tar \
+    gzip \
     jq
 
 # Docker client
