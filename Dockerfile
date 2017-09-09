@@ -1,6 +1,6 @@
 FROM docker:stable
 
-ENV PACKER_VER=0.12.2
+ENV PACKER_VER=1.0.4
 ENV CLOUD_SDK_VERSION 170.0.1
 ENV PATH /google-cloud-sdk/bin:$PATH
 
