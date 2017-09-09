@@ -23,9 +23,13 @@ RUN apk update && apk upgrade && \
 # Docker client
 RUN set -x && \
     curl -L -o /tmp/docker-$DOCKER_VERSION.tgz https://get.docker.com/builds/Linux/x86_64/docker-$DOCKER_VERSION.tgz && \
-    tar -xz -C /tmp -f /tmp/docker-$DOCKER_VERSION.tgz && \
-    rm /tmp/docker-$DOCKER_VERSION.tgz && \
-    mv /tmp/docker/* /usr/bin
+    # tar -x -C /tmp -f /tmp/docker-$DOCKER_VERSION.tgz && \
+    tar --extract \
+		--/tmp/docker-$DOCKER_VERSION.tgz \
+		--strip-components 1 \
+		--directory /usr/local/bin/ && \
+    rm /tmp/docker-$DOCKER_VERSION.tgz
+    # mv /tmp/docker/* /usr/bin
     
 # google cloud sdk
 RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
