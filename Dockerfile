@@ -1,6 +1,7 @@
 FROM hashicorp/packer
 
-ENV DOCKER_VERSION 17.06.0-ce
+ENV DOCKER_CHANNEL stable
+ENV DOCKER_VERSION 17.06.2-ce
 ENV CLOUD_SDK_VERSION 170.0.1
 ENV PATH /google-cloud-sdk/bin:$PATH
 
@@ -22,7 +23,8 @@ RUN apk update && apk upgrade && \
 
 # Docker client
 RUN set -x && \
-    curl -L -o /tmp/docker-$DOCKER_VERSION.tgz https://get.docker.com/builds/Linux/x86_64/docker-$DOCKER_VERSION.tgz && \
+    # curl -L -o /tmp/docker-$DOCKER_VERSION.tgz https://get.docker.com/builds/Linux/x86_64/docker-$DOCKER_VERSION.tgz && \
+    curl -fL -o /tmp/docker-$DOCKER_VERSION.tgz "https://download.docker.com/linux/static/${DOCKER_CHANNEL}/${dockerArch}/docker-${DOCKER_VERSION}.tgz" && \
     # tar -x -C /tmp -f /tmp/docker-$DOCKER_VERSION.tgz && \
     tar --extract \
     	--file /tmp/docker-$DOCKER_VERSION.tgz \
