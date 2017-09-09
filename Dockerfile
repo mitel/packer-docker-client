@@ -25,9 +25,9 @@ RUN set -x && \
     curl -L -o /tmp/docker-$DOCKER_VERSION.tgz https://get.docker.com/builds/Linux/x86_64/docker-$DOCKER_VERSION.tgz && \
     # tar -x -C /tmp -f /tmp/docker-$DOCKER_VERSION.tgz && \
     tar --extract \
-		--/tmp/docker-$DOCKER_VERSION.tgz \
-		--strip-components 1 \
-		--directory /usr/local/bin/ && \
+    	--file /tmp/docker-$DOCKER_VERSION.tgz \
+	--strip-components 1 \
+	--directory /usr/local/bin/ && \
     rm /tmp/docker-$DOCKER_VERSION.tgz
     # mv /tmp/docker/* /usr/bin
     
