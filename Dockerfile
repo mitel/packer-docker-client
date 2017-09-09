@@ -1,6 +1,6 @@
 FROM hashicorp/packer
 
-ENV DOCKER_VERSION 17.07.0-ce
+ENV DOCKER_VERSION 17.06.0-ce
 ENV CLOUD_SDK_VERSION 170.0.1
 ENV PATH /google-cloud-sdk/bin:$PATH
 
