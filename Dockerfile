@@ -20,7 +20,8 @@ RUN apk update && apk upgrade && \
     tar \
     jq \
     ca-certificates \
-    sed 
+    sed \
+    gettext
 
 # Packer
 RUN wget -O /tmp/packer.zip \
