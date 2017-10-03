@@ -1,7 +1,7 @@
 FROM docker:stable
 
-ENV PACKER_VER=1.0.4
-ENV CLOUD_SDK_VERSION 170.0.1
+ENV PACKER_VER=1.1.0
+ENV CLOUD_SDK_VERSION 173.0.0
 ENV PATH /google-cloud-sdk/bin:$PATH
 
 RUN apk update && apk upgrade && \
